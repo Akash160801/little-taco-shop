@@ -1,0 +1,370 @@
+@import url('https://fonts.googleapis.com/css2?family=Fugaz+One&family=Nunito&display=swap');
+
+/* || CSS RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-image: linear-gradient(
+    rgb(255, 166, 0),
+    rgb(251, 177, 39),
+    rgb(246, 194, 97)
+  );
+}
+
+body {
+  min-width: 100vh;
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--BG-COLOR);
+  font-family: 'Nunito', sans-serif;
+  box-shadow: 0 0 10px var(--BG-BLACK);
+}
+
+/* || VARIABLES */
+:root {
+  --BG-COLOR: whitesmoke;
+  --BG-BLACK: black;
+  --ORANGE-COLOR: hsla(16, 100%, 50%, 0.764);
+  --BORDER-RADIUS: 15px;
+  --FONT-HEADING: 'Fugaz One', cursive;
+}
+
+/* ||HEADER */
+
+header {
+  position: sticky;
+  z-index: 1;
+  top: 0;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--FONT-HEADING);
+  letter-spacing: 0.1rem;
+}
+
+h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.8rem;
+  font-weight: bolder;
+  font-size: 2.3rem;
+
+  background-color: var(--BG-BLACK);
+  color: white;
+}
+nav {
+  background-color: var(--BG-COLOR);
+  border: 1px solid black;
+  box-shadow: 0 6px 5px -5px var(--BG-BLACK);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+
+nav li {
+  padding: 1rem 2rem;
+}
+nav a {
+  color: black;
+  font-size: 1.2rem;
+}
+
+nav a:active {
+  color: rgb(255, 166, 0);
+}
+
+nav :is(a:hover, a:focus) {
+  color: hsla(0, 0%, 33%, 0.666);
+}
+
+/* || MAIN BODY */
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* || HEADER BANNER */
+
+.header-banner {
+  position: relative;
+}
+
+.header-banner .bienvenidos {
+  background-color: var(--ORANGE-COLOR);
+  color: white;
+  position: absolute;
+  top: -100px;
+  left: 20px;
+  padding: 0.4rem 0.6rem;
+  text-shadow: 2px 2px 5px hsla(0, 0%, 20%, 0.779);
+  animation: welcome 0.5s ease-in-out 1s forwards;
+}
+
+@keyframes welcome {
+  0% {
+    top: -20px;
+    transform: skew(0deg, -5deg) scale(0);
+  }
+  80% {
+    top: 30px;
+    transform: skew(10deg, -5deg) scale(1.2);
+  }
+  100% {
+    top: 20px;
+    transform: skew(-10deg, -5deg) scale(1);
+  }
+}
+
+/* || MENU */
+
+thead,
+tbody,
+tfoot,
+tr {
+  display: contents;
+}
+
+#menu {
+  margin: 1.5rem;
+}
+
+#menu h2 {
+  color: var(--ORANGE-COLOR);
+  font-size: 2em;
+  padding: 1rem 0;
+}
+
+.menu-table {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas:
+    'hd1 hd2 hd3'
+    'cr cr1 cr1p'
+    'cr cr2 cr2p'
+    'cr cr3 cr3p'
+    'sf sf1 sf1p'
+    'sf sf2 sf2p'
+    'sf sf3 sf3p'
+    'ft ft ft';
+  gap: 0.2em;
+}
+
+.menu-cr {
+  grid-area: cr;
+}
+.menu-sf {
+  grid-area: sf;
+}
+.menu-ft {
+  grid-area: ft;
+}
+
+.menu-cr,
+.menu-sf,
+.menu-ft,
+.menu-header {
+  color: var(--ORANGE-COLOR);
+  height: 100%;
+  display: grid;
+  place-content: center;
+  font-weight: bolder;
+  font-size: 1.4em;
+}
+
+.menu-header,
+.menu-item {
+  border: 1px ridge #333;
+  padding: 1em;
+}
+
+.menu-item {
+  display: grid;
+  place-content: center;
+}
+
+#heading th:first-child {
+  border-top-left-radius: var(--BORDER-RADIUS);
+}
+
+#heading th:last-child {
+  border-top-right-radius: var(--BORDER-RADIUS);
+}
+tfoot td {
+  border-bottom-left-radius: var(--BORDER-RADIUS);
+  border-bottom-right-radius: var(--BORDER-RADIUS);
+}
+
+/* || BACK TO TOP */
+
+.btt p {
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.btt a {
+  color: var(--BG-BLACK);
+}
+
+.btt :is(a:hover, a:focus) {
+  color: hsla(0, 0%, 33%, 0.666);
+}
+
+/* || FOOTER */
+
+footer {
+  background-color: var(--BG-BLACK);
+  color: var(--BG-COLOR);
+  padding: 1rem;
+
+  position: sticky;
+  bottom: 0;
+  z-index: 1;
+}
+
+footer p {
+  display: flex;
+  justify-content: center;
+}
+
+/* || ABOUT */
+
+#about {
+  margin: 1.4em 1.4em 10em 1.4em;
+}
+
+#about h2 {
+  color: var(--ORANGE-COLOR);
+  font-size: 2em;
+  padding: 1rem 0;
+}
+
+#about .TS {
+  font-size: 1.2em;
+  font-weight: 100;
+  margin: 0.9rem;
+}
+
+#about h3 {
+  color: var(--ORANGE-COLOR);
+  font-size: 1.3em;
+  margin-bottom: 0.7em;
+  font-style: italic;
+}
+
+#about summary {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+#about .paragraph {
+  margin: 0.9rem;
+  font-size: 1.1em;
+}
+
+/* || TIMINGS */
+
+.timings h2 {
+  color: var(--ORANGE-COLOR);
+  font-family: var(--FONT-HEADING);
+  padding: 1em 0;
+}
+
+.timings {
+  margin: 1.4em 1.4em 10em 1.4em;
+}
+
+.timings p {
+  padding-bottom: 0.7em;
+}
+
+/* || CONTACT */
+
+.contact {
+  margin: 1.4em 1.4em 10em 1.4em;
+}
+
+.location h2,
+.contact-form h2 {
+  color: var(--ORANGE-COLOR);
+  font-family: var(--FONT-HEADING);
+  font-size: 2em;
+  padding-bottom: 0.6em;
+}
+
+.location {
+  margin-bottom: 2.2em;
+}
+
+.message-form fieldset {
+  border: none;
+}
+
+.contact-p {
+  padding: 0.7em 0;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.your-message {
+  font-size: 1.2em;
+  padding-bottom: 0.4em;
+}
+
+.contact-p label {
+  display: block;
+  padding-bottom: 0.4em;
+}
+
+.contact-p input {
+  display: block;
+  width: 100%;
+  border-radius: var(--BORDER-RADIUS);
+  border: 1px solid #333;
+  padding: 0.5em;
+  font-size: 1em;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#message {
+  display: block;
+  width: 100%;
+  border-radius: var(--BORDER-RADIUS);
+  border: 1px solid #333;
+
+  padding: 0.5em;
+  font-size: 1.3em;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* || BUTTON */
+
+#buttons {
+  margin: 1em 0;
+}
+
+.button {
+  margin-right: 0.8em;
+  padding: 0.8em 1.6em;
+  background-color: var(--ORANGE-COLOR);
+  color: var(--BG-COLOR);
+  font-size: 1.2em;
+  font-weight: bold;
+  border-radius: var(--BORDER-RADIUS);
+  border: 2px solid #333;
+}
